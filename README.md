@@ -18,3 +18,6 @@ With Github-Downloader you can download any directory in Github that you can acc
 ### PREVIEW
 
 ![PREVIEW](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/64v3x3mikk78jiyltc1n.png)
+
+
+#### NOTE: Presently works only on Mac systems.
