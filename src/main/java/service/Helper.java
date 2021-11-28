@@ -18,10 +18,11 @@ public class Helper {
 
     private static Helper instance = null;
 
-    private Helper() {}
+    private Helper() {
+    }
 
     public static Helper getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new Helper();
         }
         return instance;
@@ -41,14 +42,14 @@ public class Helper {
     }
 
 
-    public Path UrlParser(String URL, String token)  {
+    public Path UrlParser(String URL, String token) {
         Path path = new Path();
         String[] urlParts = URL.split("/");
         path.setUsername(urlParts[3]);
         path.setRepository(urlParts[4]);
 
         StringBuilder directoryPath = new StringBuilder();
-        for(int i = 7; i < urlParts.length; i++) {
+        for (int i = 7; i < urlParts.length; i++) {
             directoryPath.append(urlParts[i]);
             directoryPath.append("/");
         }
@@ -68,22 +69,23 @@ public class Helper {
             HttpsURLConnection connection = (HttpsURLConnection) apiUrl.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept", "application/vnd.github.v3+json");
-            connection.setRequestProperty("Authorization", "token " + path.getToken());
+            if (path.getToken().length() > 0)
+                connection.setRequestProperty("Authorization", "token " + path.getToken());
 
-            if(connection.getResponseCode() == 200) {
+            if (connection.getResponseCode() == 200) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder response = new StringBuilder();
                 String output;
-                while((output = br.readLine()) != null) {
+                while ((output = br.readLine()) != null) {
                     response.append(output);
                 }
                 JSONArray jsonResponse = new JSONArray(response.toString());
-                for(int i = jsonResponse.length() - 1; i >= 0; i--) {
+                for (int i = jsonResponse.length() - 1; i >= 0; i--) {
                     JSONObject json = jsonResponse.getJSONObject(i);
                     String type = json.getString("type");
-                    if(type.equalsIgnoreCase("file")) {
+                    if (type.equalsIgnoreCase("file")) {
                         downloadObject.setDownload(type, json.getString("download_url"));
-                    } else if(type.equalsIgnoreCase("dir")) {
+                    } else if (type.equalsIgnoreCase("dir")) {
                         // todo: recursive download type:dir html_url:url
                         downloadObject.setDownload(type, json.getString("html_url"));
                     }
@@ -99,16 +101,16 @@ public class Helper {
             System.exit(1);
         }
 
-        return  downloadObject;
+        return downloadObject;
     }
 
     public void download(DownloadObject downloadObject, String downloadPath, Path path) {
-        for(int i = 0; i < downloadObject.getSize(); i++) {
+        for (int i = 0; i < downloadObject.getSize(); i++) {
             Pair download = downloadObject.getDownload(i);
-            if(download.getType().equalsIgnoreCase("file")) {
+            if (download.getType().equalsIgnoreCase("file")) {
                 FileDownloader downloader = new FileDownloader(download.getUrl(), downloadPath);
                 downloader.start();
-            } else if(download.getType().equalsIgnoreCase("dir")) {
+            } else if (download.getType().equalsIgnoreCase("dir")) {
                 recursiveDownloader(download.getUrl(), path.getToken(), downloadPath);
             }
         }
@@ -117,7 +119,7 @@ public class Helper {
     public String createDownloadFolder(Path path, String downloadPath) throws IOException {
         // crete path string to create new folder
         String folderName = getFolderName(path.getDirectory());
-        if(downloadPath.charAt(downloadPath.length() - 1) ==  '/') {
+        if (downloadPath.charAt(downloadPath.length() - 1) == '/') {
             downloadPath = downloadPath + folderName;
         } else {
             downloadPath = downloadPath + "/" + folderName;
@@ -125,7 +127,7 @@ public class Helper {
 
         File downloadDir = new File(downloadPath);
         boolean isDirCreated = downloadDir.mkdir();
-        if(!isDirCreated) {
+        if (!isDirCreated) {
             throw new IOException("Unable to create folder! ");
         }
 
@@ -143,8 +145,6 @@ public class Helper {
         fileName = urlParts[urlParts.length - 1];
         return downloadPath + "/" + fileName;
     }
-
-
 
 
 }

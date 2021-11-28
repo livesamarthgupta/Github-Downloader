@@ -9,7 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter url for the path: ");
         String url = sc.nextLine();
-        System.out.println("Enter OAUTH Token: ");
+        System.out.println("Enter OAUTH Token (OPTIONAL): ");
         String token = sc.nextLine();
         System.out.println("Enter path for download: ");
         String downloadPath = sc.nextLine();
