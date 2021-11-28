@@ -1,6 +1,0 @@
-service/Helper.class
-Main.class
-service/FileDownloader.class
-model/Path.class
-model/Pair.class
-model/DownloadObject.class
