@@ -23,7 +23,11 @@ public class Helper {
 
     public static Helper getInstance() {
         if (instance == null) {
-            instance = new Helper();
+            synchronized (Helper.class) {
+                if (instance == null) {
+                    instance = new Helper();
+                }
+            }
         }
         return instance;
     }
