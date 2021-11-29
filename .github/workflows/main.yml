@@ -38,6 +38,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: |
-          chmod +x ./target/stub.sh
-          cat ./target/stub.sh ./target/Github-Downloader-1.0-SNAPSHOT-jar-with-dependencies.jar > gitdown && chmod +x gitdown 
+        run: echo ${{ github.workspace }}
