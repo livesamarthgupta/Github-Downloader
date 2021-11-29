@@ -28,7 +28,7 @@ public class FileDownloader extends Thread {
 
             FileOutputStream fos = new FileOutputStream(fileName);
             fos.getChannel().transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
-            System.out.print("...");
+            System.out.print(".");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
