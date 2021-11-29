@@ -1,5 +1,6 @@
 import service.Helper;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -7,12 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter url for the path: ");
+        System.out.print("Enter url for the path: ");
         String url = sc.nextLine();
-        System.out.println("Enter OAUTH Token (OPTIONAL): ");
+        System.out.print("Enter OAUTH Token (OPTIONAL): ");
         String token = sc.nextLine();
-        System.out.println("Enter path for download: ");
-        String downloadPath = sc.nextLine();
+        String userHome = System.getProperty("user.home");
+        File downloadPath = new File(userHome, "Downloads");
         helper.recursiveDownloader(url, token, downloadPath);
     }
 }

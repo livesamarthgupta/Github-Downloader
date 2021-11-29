@@ -1,15 +1,15 @@
 package model;
 
-public class Pair {
+public class UrlTypePair {
     private String type;
     private String url;
 
-    public Pair(String type, String url) {
+    public UrlTypePair(String type, String url) {
         this.type = type;
         this.url = url;
     }
 
-    public Pair() {
+    public UrlTypePair() {
     }
 
     public String getType() {

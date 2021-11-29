@@ -1,6 +1,6 @@
 package model;
 
-public class Path {
+public class Details {
     String username;
     String repository;
     String directory;
