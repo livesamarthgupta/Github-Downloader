@@ -1,4 +1,5 @@
-# Github-Downloader
+# Github-Downloader [![CI](https://github.com/livesamarthgupta/Github-Downloader/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/livesamarthgupta/Github-Downloader/actions/workflows/main.yml)
+
 
 Have you ever wanted to download just a single folder or a file from github but couldn't as Github doesn't allow Directory download. Here comes Github-Downloader.
 
