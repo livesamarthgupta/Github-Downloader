@@ -8,6 +8,7 @@ It will download the directory in your system downloads folder.
 <p align="left">
   <a href="https://github.com/livesamarthgupta/Github-Downloader/releases/"><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/livesamarthgupta/Github-Downloader/total.svg?label=Download&logo=github&style=for-the-badge"></a> 
 </p>
+
 ---
 
 ### TO GENERATE RUNNABLE JAR
@@ -16,7 +17,6 @@ It will download the directory in your system downloads folder.
 $ mvn clean compile assembly:single
 ```
 
----
 
 ### TO RUN THE JAR
 
@@ -27,7 +27,6 @@ $ mvn clean compile assembly:single
 $ java -jar Github-Downloader-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
----
 
 ### TO CREATE EXECUTABLE UNIX COMMAND
 
@@ -45,6 +44,7 @@ $ sh makeCommand.sh
 
 ![Image Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bas2rh8pqphbw7608bq2.png)
 
+---
 
 ##### NOTE: Directory structure with more than 60 files may require personal access Token.
 ###### TO OBTAIN PERSONAL ACCESS TOKEN:
