@@ -10,7 +10,9 @@ It will download the directory in your system downloads folder.
 
 ### TO GENERATE RUNNABLE JAR
 
-`$ mvn clean compile assembly:single`
+```
+$ mvn clean compile assembly:single
+```
 
 ---
 
@@ -19,23 +21,27 @@ It will download the directory in your system downloads folder.
 1. Make sure you have Java installed and PATH is set.
 2. Run the jar.
 
-`$ java -jar Github-Downloader-1.0-SNAPSHOT-jar-with-dependencies.jar`
+```
+$ java -jar Github-Downloader-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
 
 ---
 
 ### TO CREATE EXECUTABLE UNIX COMMAND
 
-1. Run the bash file named "makeCommand.sh" from a UNIX terminal (Terminal for Mac/Linux, GitBash/Cygwin for Windows)
+1. Run the bash file named `makeCommand.sh` from a UNIX terminal (Terminal for Mac/Linux, GitBash/Cygwin for Windows)
 
-`$ sh makeCommand.sh`
+```
+$ sh makeCommand.sh
+```
 
-2. This will generate "gitdir" exec file, place it in your terminal home or point it with PATH variable, this will add a new command `gitdir`
+2. This will generate `gitdir` exec file, place it in your terminal home or point it with PATH variable, this will add a new command `gitdir`
 
 ---
 
 ### PREVIEW
 
-![Image Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gg2wnvnaxfjw7wpucl98.png)
+![Image Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bas2rh8pqphbw7608bq2.png)
 
 
 ##### NOTE: Directory structure with more than 60 files may require personal access Token.
