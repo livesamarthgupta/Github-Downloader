@@ -1,11 +1,13 @@
 # Github-Downloader [![CI](https://github.com/livesamarthgupta/Github-Downloader/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/livesamarthgupta/Github-Downloader/actions/workflows/main.yml)
 
-
 Have you ever wanted to download just a single folder or a file from github but couldn't as Github doesn't allow Directory download. Here comes Github-Downloader.
 
 With Github-Downloader you can download any directory in Github that you can access using the browser. You just need to have the URL of the resource and that's it.
 It will download the directory in your system downloads folder.
 
+<p align="left">
+  <a href="https://github.com/livesamarthgupta/Github-Downloader/releases/"><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/livesamarthgupta/Github-Downloader/total.svg?label=Download&logo=github&style=for-the-badge"></a> 
+</p>
 ---
 
 ### TO GENERATE RUNNABLE JAR
