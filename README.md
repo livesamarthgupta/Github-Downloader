@@ -11,6 +11,26 @@ It will download the directory in your system downloads folder.
 
 ---
 
+### TO RUN ON MAC/LINUX 
+
+```
+$ chmod +x gitdir
+$ sh gitdir
+```
+
+Note: You can make it available as a command by placing the binary `gitdir` under `/usr/local/bin/`
+
+
+### TO RUN ON WINDOWS
+
+```
+$ sh gitdir
+```
+
+Note: You will need bash shell to run on Windows. (See [Cygwin](https://www.cygwin.com/) or [GitBash](https://git-scm.com/downloads))
+
+---
+
 ### TO GENERATE RUNNABLE JAR
 
 ```
