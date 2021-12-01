@@ -11,11 +11,16 @@ It will download the directory in your system downloads folder.
 
 ---
 
-### TO RUN ON MAC/LINUX 
+### TO RUN ON MAC/LINUX
+
+```
+$ sh gitdir
+```
+
+For running first time might need executable permission,
 
 ```
 $ chmod +x gitdir
-$ sh gitdir
 ```
 
 Note: You can make it available as a command by placing the binary `gitdir` under `/usr/local/bin/`
@@ -27,36 +32,15 @@ Note: You can make it available as a command by placing the binary `gitdir` unde
 $ sh gitdir
 ```
 
-Note: You will need bash shell to run on Windows. (See [Cygwin](https://www.cygwin.com/) or [GitBash](https://git-scm.com/downloads))
+Note: You will need bash shell to run on Windows. (See [Cygwin](https://www.cygwin.com/) or [GitBash](https://git-scm.com/downloads)). Place it in your terminal home/bin, this will add a new command `gitdir`
 
 ---
 
-### TO GENERATE RUNNABLE JAR
+### TO BUILD THE PROJECT
 
 ```
 $ mvn clean compile assembly:single
 ```
-
-
-### TO RUN THE JAR
-
-1. Make sure you have Java installed and PATH is set.
-2. Run the jar.
-
-```
-$ java -jar Github-Downloader-1.0-SNAPSHOT-jar-with-dependencies.jar
-```
-
-
-### TO CREATE EXECUTABLE UNIX COMMAND
-
-1. Run the bash file named `makeCommand.sh` from a UNIX terminal (Terminal for Mac/Linux, GitBash/Cygwin for Windows)
-
-```
-$ sh makeCommand.sh
-```
-
-2. This will generate `gitdir` exec file, place it in your terminal home or point it with PATH variable, this will add a new command `gitdir`
 
 ---
 
