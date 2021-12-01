@@ -61,7 +61,7 @@ public class Helper {
         StringBuilder directoryPath = new StringBuilder();
         for (int i = 7; i < urlParts.length; i++) {
             directoryPath.append(urlParts[i]);
-            directoryPath.append(File.separator);
+            directoryPath.append("/");
         }
         details.setDirectory(directoryPath.toString());
 
