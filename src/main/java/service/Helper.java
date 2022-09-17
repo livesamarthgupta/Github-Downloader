@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class Helper {
 
-    private static Helper instance = null;
+    private static volatile Helper instance = null;
 
     private Helper() {
     }
